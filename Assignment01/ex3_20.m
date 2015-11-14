@@ -16,10 +16,13 @@ variable(w).name = 'Wife';
 variable(h).domain = {'1','2','3','4'};
 variable(h).name = 'Husband';
 
+prob_str = input('Give probability of p(inc = low):','s');
+prob = str2double(prob_str);
+
 % p(inc)
 pot{inc} = array(inc);
-pot{inc}.table(low)=0.9;
-pot{inc}.table(hight)= 1- pot{inc}.table(low);
+pot{inc}.table(low) = prob;
+pot{inc}.table(hight) = 1- pot{inc}.table(low);
 
 % p(w|inc)
 pot{w} = array([w inc]);
