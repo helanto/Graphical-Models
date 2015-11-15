@@ -144,3 +144,38 @@ p_games_wo_g1_14_set = setpot(p_games_wo_g1_14,[g1_12 g2_12 g1_23 g2_23 g1_13 g2
 p_g1_14_l_given_games = divpots(p_games_set,p_games_wo_g1_14_set);
 
 disp(['p(D winning A|outcome of all games) = ' num2str(p_g1_14_l_given_games.table)]);
+
+% jointpot_wo_g1_14 = p(g1_12, g2_12, g1_23, g2_23, g1_13, g2_13, g3_13, g1_34, g2_34, p1, p2, p3, p4)
+jointpot_wo_g1_14 = sumpot(jointpot,g1_14);
+
+% p_p1p2p3p4_games_set = p(g1_12 = w, g2_12 = w, ... , g2_34 = w, p1, p2, p3, p4)
+p_p1p2p3p4_games_set = setpot(jointpot_wo_g1_14,[g1_12 g2_12 g1_23 g2_23 g1_13 g2_13 g3_13 g1_34 g2_34],[w w w w w w l w w]);
+
+% p(p1,p2,p3,p4|g1_12 = w,g2_12=2, ... , g2_34 = w)
+p_p1p2p3p4_given_games = divpots(p_p1p2p3p4_games_set,p_games_wo_g1_14_set);
+
+% p(p1|g1_12 = w,g2_12=2, ... , g2_34 = w)
+p1_given_games = sumpot(p_p1p2p3p4_given_games,[p2 p3 p4]); %marginalising
+% p(p2|g1_12 = w,g2_12=2, ... , g2_34 = w)
+p2_given_games = sumpot(p_p1p2p3p4_given_games,[p1 p3 p4]);
+% p(p3|g1_12 = w,g2_12=2, ... , g2_34 = w)
+p3_given_games = sumpot(p_p1p2p3p4_given_games,[p1 p2 p4]);
+% p(p4|g1_12 = w,g2_12=2, ... , g2_34 = w)
+p4_given_games = sumpot(p_p1p2p3p4_given_games,[p1 p2 p3]);
+
+disp('p(A|outcome of all games) :');
+disp(p1_given_games.table);
+
+disp('p(B|outcome of all games) :');
+disp(p2_given_games.table);
+
+disp('p(C|outcome of all games) :');
+disp(p3_given_games.table);
+
+disp('p(D|outcome of all games) :');
+disp(p4_given_games.table);
+
+% disptable(p1_given_games,variable);
+% disptable(p2_given_games,variable);
+% disptable(p3_given_games,variable);
+% disptable(p4_given_games,variable);
