@@ -289,16 +289,18 @@ disp(sum_cm.table);
 disp(['P(Computational Modeling) : ']);
 disp(sum_cm.table);
 
+
+p_q1 = setpot(sum(jointpot,[ ir bio maths organisation biology writing programming]),[rm nlm cm ac at mv aml pr gm],[1,1,1,1,1,1,1,1,1]);
 disp('Question 1 ,probability of finishing Masters = ');
-p_q1 = setpot(sum(jointpot,[ ir bio maths organisation biology writing programming]),[rm nlm cm ac at mv aml pr gm],[1,1,1,1,1,1,1,1,1])
+disp(p_q1.table);
 sum_q2_num = setpot(sum(jointpot,[ ir bio biology writing programming]),[rm nlm cm ac at mv aml pr gm maths organisation],[1,1,1,1,1,1,1,1,1,1,1]);
 sum_q2_denum = setpot(sum(jointpot,[ rm nlm cm ac at mv aml pr gm ir bio biology writing programming]),[ maths organisation],[1,1]);
+p_q2 = divpots(sum_q2_num,sum_q2_denum);
 disp('Question 2 ,probability of finishing Masters = ');
-p_q2 = divpots(sum_q2_num,sum_q2_denum)
+disp(p_q2.table);
 sum_q3_num = setpot(sum(jointpot,[ ir rm maths organisation programming]),[bio nlm cm ac at mv aml pr gm biology writing],[1,1,1,1,1,1,1,1,1,1,1]);
 sum_q3_denum = setpot(sum(jointpot,[ rm nlm cm ac at mv aml pr gm ir bio maths organisation programming]),[ biology writing],[1,1]);
+p_q3 = divpots(sum_q3_num,sum_q3_denum);
 disp('Question 3 ,probability of finishing Masters = ');
-p_q3 = divpots(sum_q3_num,sum_q3_denum)
-
-
+disp(p_q3.table);
 
