@@ -169,32 +169,46 @@ pad8 = sumpot(p_ads_given_conflicts,[1:7 9:10]);
 pad9 = sumpot(p_ads_given_conflicts,[1:8 10]);
 pad10 = sumpot(p_ads_given_conflicts,1:9);
 
-disp('p(Advert 01|choises of all 20 users) :');
-disp(pad1.table);
 
-disp('p(Advert 02|choises of all 20 users) :');
-disp(pad2.table);
+% Display the whole probability distribution for each advert
 
-disp('p(Advert 03|choises of all 20 users) :');
-disp(pad3.table);
+% disp('p(Advert 01|choises of all 20 users) :');
+% disp(pad1.table);
+% 
+% disp('p(Advert 02|choises of all 20 users) :');
+% disp(pad2.table);
+% 
+% disp('p(Advert 03|choises of all 20 users) :');
+% disp(pad3.table);
+% 
+% disp('p(Advert 04|choises of all 20 users) :');
+% disp(pad4.table);
+% 
+% disp('p(Advert 05|choises of all 20 users) :');
+% disp(pad5.table);
+% 
+% disp('p(Advert 06|choises of all 20 users) :');
+% disp(pad6.table);
+% 
+% disp('p(Advert 07|choises of all 20 users) :');
+% disp(pad7.table);
+% 
+% disp('p(Advert 08|choises of all 20 users) :');
+% disp(pad8.table);
+% 
+% disp('p(Advert 09|choises of all 20 users) :');
+% disp(pad9.table);
+% 
+% disp('p(Advert 10|choises of all 20 users) :');
+% disp(pad10.table);
 
-disp('p(Advert 04|choises of all 20 users) :');
-disp(pad4.table);
-
-disp('p(Advert 05|choises of all 20 users) :');
-disp(pad5.table);
-
-disp('p(Advert 06|choises of all 20 users) :');
-disp(pad6.table);
-
-disp('p(Advert 07|choises of all 20 users) :');
-disp(pad7.table);
-
-disp('p(Advert 08|choises of all 20 users) :');
-disp(pad8.table);
-
-disp('p(Advert 09|choises of all 20 users) :');
-disp(pad9.table);
-
-disp('p(Advert 10|choises of all 20 users) :');
-disp(pad10.table);
+disp(['Expected value of Interest rate - Advert 1: ' num2str(expected(pad1.table))]);
+disp(['Expected value of Interest rate - Advert 2: ' num2str(expected(pad2.table))]);
+disp(['Expected value of Interest rate - Advert 3: ' num2str(expected(pad3.table))]);
+disp(['Expected value of Interest rate - Advert 4: ' num2str(expected(pad4.table))]);
+disp(['Expected value of Interest rate - Advert 5: ' num2str(expected(pad5.table))]);
+disp(['Expected value of Interest rate - Advert 6: ' num2str(expected(pad6.table))]);
+disp(['Expected value of Interest rate - Advert 7: ' num2str(expected(pad7.table))]);
+disp(['Expected value of Interest rate - Advert 8: ' num2str(expected(pad8.table))]);
+disp(['Expected value of Interest rate - Advert 9: ' num2str(expected(pad9.table))]);
+disp(['Expected value of Interest rate - Advert 10: ' num2str(expected(pad10.table))]);
