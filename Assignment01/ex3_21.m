@@ -175,6 +175,11 @@ disp(p3_given_games.table);
 disp('p(D|outcome of all games) :');
 disp(p4_given_games.table);
 
+disp(['Expected skill level of A: ' num2str(expected(p1_given_games.table))]);
+disp(['Expected skill level of B: ' num2str(expected(p2_given_games.table))]);
+disp(['Expected skill level of C: ' num2str(expected(p3_given_games.table))]);
+disp(['Expected skill level of D: ' num2str(expected(p4_given_games.table))]);
+
 % disptable(p1_given_games,variable);
 % disptable(p2_given_games,variable);
 % disptable(p3_given_games,variable);
